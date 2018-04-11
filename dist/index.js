@@ -6,8 +6,8 @@ var path = require('path');
 var VersionBumpPlugin = function () {
   var plugin = function plugin(options) {
     this.settings = Object.assign({
-      dirname: path.resolve(__dirname, '../'),
-      file: path.resolve(__dirname, '../', 'version.json')
+      dirname: path.resolve(__dirname, '../../../'),
+      file: path.resolve(__dirname, '../../../', 'version.json')
     }, options);
   };
 
@@ -98,8 +98,6 @@ VersionBumpPlugin.prototype.apply = function (compiler) {
     setTimeout(function () {
       self.settings.development ? self.upVersionNumber() : self.upBuildNumber();
       self.settings.version = self.getDataFromFile('version');
-
-      console.log(self.settings);
     }, 1);
   });
 };

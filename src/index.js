@@ -4,7 +4,7 @@
  * Created Date: 2018-04-11, 09:05:23
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-04-11, 11:43:10
+ * Last Modified: 2018-04-11, 11:51:32
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -21,8 +21,8 @@ const VersionBumpPlugin = (function() {
    */
   const plugin = function(options) {
     this.settings = Object.assign({
-      dirname: path.resolve(__dirname, '../'),
-      file: path.resolve(__dirname, '../', 'version.json')
+      dirname: path.resolve(__dirname, '../../../'),
+      file: path.resolve(__dirname, '../../../', 'version.json')
     }, options)
   }
 
@@ -141,8 +141,6 @@ VersionBumpPlugin.prototype.apply = function(compiler) {
     setTimeout(function() {
       self.settings.development? self.upVersionNumber() : self.upBuildNumber();
       self.settings.version = self.getDataFromFile('version');
-
-      console.log(self.settings);
     }, 1);
   });
 };
