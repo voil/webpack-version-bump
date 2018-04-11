@@ -96,8 +96,7 @@ VersionBumpPlugin.prototype.apply = function (compiler) {
   var self = this;
   compiler.plugin('done', function () {
     setTimeout(function () {
-      self.settings.development ? self.upVersionNumber() : self.upBuildNumber();
-      self.settings.version = self.getDataFromFile('version');
+      return self.settings.development ? self.upVersionNumber() : self.upBuildNumber();
     }, 1);
   });
 };

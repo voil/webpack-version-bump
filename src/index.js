@@ -4,7 +4,7 @@
  * Created Date: 2018-04-11, 09:05:23
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-04-11, 11:51:32
+ * Last Modified: 2018-04-11, 11:57:54
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -138,10 +138,7 @@ const VersionBumpPlugin = (function() {
 VersionBumpPlugin.prototype.apply = function(compiler) {
   let self = this;
   compiler.plugin('done', function() {
-    setTimeout(function() {
-      self.settings.development? self.upVersionNumber() : self.upBuildNumber();
-      self.settings.version = self.getDataFromFile('version');
-    }, 1);
+    setTimeout(() => self.settings.development? self.upVersionNumber() : self.upBuildNumber(), 1);
   });
 };
 
