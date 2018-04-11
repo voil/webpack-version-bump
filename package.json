@@ -1,6 +1,6 @@
 {
   "name": "webpack-version-bump",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple plugin to webpack versioning code.",
   "main": "dist/index.js",
   "author": "Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>",
