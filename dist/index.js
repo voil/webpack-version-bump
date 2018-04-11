@@ -34,6 +34,7 @@ var VersionBumpPlugin = function () {
   plugin.prototype.getDataFromFile = function () {
     var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
+    delete require.cache[require.resolve(this.settings.file)];
     var data = JSON.stringify(require(this.settings.file)[name]);
     return data.replace('"', '').replace('"', "");
   };

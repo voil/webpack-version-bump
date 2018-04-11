@@ -4,7 +4,7 @@
  * Created Date: 2018-04-11, 09:05:23
  * Author: Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>
  * =============================================================================
- * Last Modified: 2018-04-11, 11:57:54
+ * Last Modified: 2018-04-11, 12:50:33
  * Modified By: Przemysław Drzewicki
  * =============================================================================
  * Copyright (c) 2018 webonweb
@@ -64,6 +64,7 @@ const VersionBumpPlugin = (function() {
    * @memberof VersionBumpPlugin
    */
   plugin.prototype.getDataFromFile = function(name = '') {
+    delete require.cache[require.resolve(this.settings.file)];
     let data = JSON.stringify(require(this.settings.file)[name]);
     return data.replace('"', '').replace('"', "");
   }
