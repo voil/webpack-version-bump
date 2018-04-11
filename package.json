@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "author": "Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>",
   "license": "MIT",
+  "keywords": ["webpack", "bump", "version", "plugin"],
   "scripts": {
     "build": "babel ./src/index.js > dist/index.js --no-comments"
   },
