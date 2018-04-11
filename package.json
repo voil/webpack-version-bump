@@ -1,0 +1,21 @@
+{
+  "name": "webpack-version-bump",
+  "version": "1.0.0",
+  "description": "Simple plugin to webpack versioning code.",
+  "main": "dist/index.js",
+  "author": "Przemysław Drzewicki <przemyslaw.drzewicki@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel ./src/index.js > dist/index.js --no-comments"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voil/webpack-version-bump.git"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
